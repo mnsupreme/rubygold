@@ -1,0 +1,35 @@
+<p>total: <%= session[:total] %></p>
+
+<div id="container">
+
+	<form method="get" action="/farm">
+		<h1>Farm</h1>
+		<p>(earns 10 to 20 golds)</p>
+		<button type="submit">Find Gold!</button>
+	</form>
+
+	<form method="get" action="/cave">
+		<h1>Cave</h1>
+		<p>(earns 5 to 10 golds)</p>
+		<button type="submit">Find Gold!</button>
+	</form>
+
+	<form method="get" action="/house">
+		<h1>House</h1>
+		<p>(earns 2 to 5 golds)</p>
+		<button type="submit">Find Gold!</button>
+	</form>
+
+	<form method="get" action="/casino">
+		<h1>Casino</h1>
+		<p>(earns/takes 0 to 50 gold)</p>
+		<button type="submit">Find Gold!</button>
+	</form>
+</div>
+
+<p>Activity:</p>
+<div id="results">
+	<% session[:results].each do |i| %>
+	<p style="color:<%= i["color"] %>"><%= i["text"] %> <%= i["date"] %></p>
+	<% end %>
+</div>
